@@ -45,7 +45,10 @@
   "duplicates": [
    "models/sparkfun/production_parts/connectors/ID-12_SMD/stl/1X05.STL"
   ], 
-  "filename": "models/sparkfun/production_parts/connectors/headers/ID-12_SMD/stl/1X05.STL"
+  "filename": "models/sparkfun/production_parts/connectors/headers/ID-12_SMD/stl/1X05.STL",
+  "rotation": {
+   "x": 90
+  }
  }, 
  "1X05_SMD": {
   "duplicates": [
@@ -327,7 +330,10 @@
   "duplicates": [
    "models/sparkfun/production_parts/connectors/JST/JST_2/JST-2-SMD/stl/JST-2-SMD.STL"
   ], 
-  "filename": "models/sparkfun/production_parts/connectors/JST/JST-2-SMD/stl/JST-2-SMD.STL"
+  "filename": "models/sparkfun/production_parts/connectors/JST/JST-2-SMD/stl/JST-2-SMD.STL",
+  "rotation": {
+   "x": 90
+  }
  }, 
  "JST-3-PTH-VERT": {
   "filename": "models/sparkfun/production_parts/connectors/JST/JST_3/JST-3-PTH-VERT/stl/JST-3-PTH-VERT.STL"
@@ -337,9 +343,10 @@
  }, 
  "LED-0603": {
   "duplicates": [
-   "models/sparkfun/production_parts/passive/resistors/0603/LED-0603.stl"
+   "models/sparkfun/production_parts/opto/LED_0603/LED-0603.stl"
   ], 
-  "filename": "models/sparkfun/production_parts/opto/LED_0603/LED-0603.stl"
+  "filename": "models/sparkfun/production_parts/passive/resistors/0603/LED-0603.stl",
+  "note": "The sensibly named duplicate has a missing face."
  }, 
  "LED-1206": {
   "filename": "models/sparkfun/production_parts/opto/LED_1206/LED-1206.stl"
@@ -646,7 +653,11 @@
   "filename": "models/sparkfun/production_parts/semiconductors/IC_SMD/SO/SO24W/stl/SO24W.STL"
  }, 
  "SOD-323": {
-  "filename": "models/sparkfun/production_parts/semiconductors/IC_SMD/SOD-323/stl/SOD-323.STL"
+  "filename": "models/sparkfun/production_parts/semiconductors/IC_SMD/SOD-323/stl/SOD-323.STL",
+  "note": "Possibly needs to be rotated around Z to be completely accurate?",
+  "rotation": {
+   "x": 90
+  }
  }, 
  "SOIC-28": {
   "duplicates": [
@@ -695,7 +706,10 @@
   "filename": "models/sparkfun/production_parts/semiconductors/IC_SMD/SOT/SOT23-3_1.STL"
  }, 
  "SOT23-5": {
-  "filename": "models/sparkfun/production_parts/semiconductors/IC_SMD/SOT/SOT23-5.stl"
+  "filename": "models/sparkfun/production_parts/semiconductors/IC_SMD/SOT/SOT23-5.stl",
+  "rotation": {
+   "z": 180
+  }
  }, 
  "SOT23-6": {
   "filename": "models/sparkfun/production_parts/semiconductors/IC_SMD/SOT/SOT23-6/stl/SOT23-6.STL"
@@ -828,7 +842,10 @@
   "filename": "models/sparkfun/production_parts/connectors/usb/USB-AB-MICRO-SMD_V03.stl"
  }, 
  "USB-B-MICRO-SMD_V03": {
-  "filename": "models/sparkfun/production_parts/connectors/usb/USB-B-MICRO-SMD_V03.stl"
+  "filename": "models/sparkfun/production_parts/connectors/usb/USB-B-MICRO-SMD_V03.stl",
+  "rotation": {
+   "z": 180
+  }
  }, 
  "USB-B-PTH": {
   "filename": "models/sparkfun/production_parts/pth/USB/stl/USB-B-PTH.STL"
