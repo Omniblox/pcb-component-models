@@ -709,10 +709,7 @@
   "filename": "models/sparkfun/production_parts/semiconductors/IC_SMD/SOT/SOT23-3_1.STL"
  }, 
  "SOT23-5": {
-  "filename": "models/sparkfun/production_parts/semiconductors/IC_SMD/SOT/SOT23-5.stl",
-  "rotation": {
-   "z": 180
-  }
+  "filename": "models/sparkfun/production_parts/semiconductors/IC_SMD/SOT/SOT23-5.stl"
  }, 
  "SOT23-6": {
   "filename": "models/sparkfun/production_parts/semiconductors/IC_SMD/SOT/SOT23-6/stl/SOT23-6.STL"
@@ -845,10 +842,7 @@
   "filename": "models/sparkfun/production_parts/connectors/usb/USB-AB-MICRO-SMD_V03.stl"
  }, 
  "USB-B-MICRO-SMD_V03": {
-  "filename": "models/sparkfun/production_parts/connectors/usb/USB-B-MICRO-SMD_V03.stl",
-  "rotation": {
-   "z": 180
-  }
+  "filename": "models/sparkfun/production_parts/connectors/usb/USB-B-MICRO-SMD_V03.stl"
  }, 
  "USB-B-PTH": {
   "filename": "models/sparkfun/production_parts/pth/USB/stl/USB-B-PTH.STL"
