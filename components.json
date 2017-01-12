@@ -332,7 +332,8 @@
   ], 
   "filename": "models/sparkfun/production_parts/connectors/JST/JST-2-SMD/stl/JST-2-SMD.STL",
   "rotation": {
-   "x": 90
+   "x": 90,
+   "z": 180
   }
  }, 
  "JST-3-PTH-VERT": {
