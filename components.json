@@ -455,13 +455,16 @@
   "filename": "models/sparkfun/production_parts/connectors/Power_Jack/stl/POWER_JACK_PTH_LOCK.stl"
  }, 
  "POWER_JACK_SMD": {
-  "filename": "models/sparkfun/production_parts/connectors/Power_Jack/POWER_JACK_SMD.stl"
+  "filename": "models/sparkfun/production_parts/connectors/Power_Jack/POWER_JACK_SMD.stl",
+  "center": false
  }, 
  "POWER_JACK_SMD_OVERPASTE_REDBOARD_0603": {
-  "filename": "models/sparkfun/production_parts/connectors/Power_Jack/POWER_JACK_SMD_OVERPASTE_REDBOARD_0603.stl"
+  "filename": "models/sparkfun/production_parts/connectors/Power_Jack/POWER_JACK_SMD_OVERPASTE_REDBOARD_0603.stl",
+  "center": false
  }, 
  "POWER_JACK_SMD_OVERPASTE_TOE": {
-  "filename": "models/sparkfun/production_parts/connectors/Power_Jack/POWER_JACK_SMD_OVERPASTE_TOE.stl"
+  "filename": "models/sparkfun/production_parts/connectors/Power_Jack/POWER_JACK_SMD_OVERPASTE_TOE.stl",
+  "center": false
  }, 
  "PT17-21C-L41-TR8": {
   "filename": "models/sparkfun/production_parts/opto/PT17-21C-L41-TR8/PT17-21C-L41-TR8.STL"
