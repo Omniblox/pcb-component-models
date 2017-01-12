@@ -410,9 +410,10 @@
  }, 
  "MICRO-SD-SOCKET-PP": {
   "duplicates": [
-   "models/sparkfun/production_parts/connectors/micro_sd/MICRO-SD-SOCKET-PP.stl"
+   "models/sparkfun/production_parts/connectors/JST/JST-2-SMD/MICRO-SD-SOCKET-PP.stl"
   ], 
-  "filename": "models/sparkfun/production_parts/connectors/JST/JST-2-SMD/MICRO-SD-SOCKET-PP.stl"
+  "filename": "models/sparkfun/production_parts/connectors/micro_sd/MICRO-SD-SOCKET-PP.stl",
+  "center": false
  }, 
  "MICROSD_1_1": {
   "duplicates": [
