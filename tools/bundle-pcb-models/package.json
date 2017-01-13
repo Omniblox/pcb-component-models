@@ -1,0 +1,17 @@
+{
+  "name": "bundle-pcb-models",
+  "version": "0.1.0",
+  "description": "Bundle files required for PCB component display",
+  "main": "bundle-pcb-models.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "omniblox",
+  "license": "ISC",
+  "dependencies": {
+    "clone": "^2.1.0",
+    "fs-extra": "^1.0.0",
+    "json-stable-stringify": "^1.0.1",
+    "xml2js": "^0.4.17"
+  }
+}
