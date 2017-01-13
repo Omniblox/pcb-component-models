@@ -38,6 +38,7 @@ var xml2js = require('xml2js');
 var stringify = require('json-stable-stringify');
 var clone = require('clone');
 
+
 function parseBrdFile(fileContent) {
 
   // TODO: Comment about `xmldom` use.
@@ -59,63 +60,79 @@ function parseBrdFile(fileContent) {
 		     });
 
   return _board;
+};
 
-}
 
-const COMPONENT_MAP_FILENAME = "components.json";
+function initBundle(componentLibraryRootDir, bundleSuffix, outputDir) {
 
-var componentLibraryRootDir = process.argv[2];
+  const COMPONENT_MAP_FILENAME = "components.json";
 
-var componentMapFilepath = path.join(componentLibraryRootDir, COMPONENT_MAP_FILENAME);
+  var _bundle = {
+    suffix: bundleSuffix,
+    outputDir: outputDir,
+    libraryDir: componentLibraryRootDir,
+    libraryComponents: null,
+    components: {},
+    outputMapPath: null,
+  };
 
-var bundleSuffix = process.argv[3];
+  var componentMapFilepath = path.join(_bundle.libraryDir, COMPONENT_MAP_FILENAME);
+  _bundle.libraryComponents = JSON.parse(fs.readFileSync(componentMapFilepath, 'utf8'));
 
-var outputRootDir = process.argv[4];
+  var outputMapFilename = COMPONENT_MAP_FILENAME.replace(".json", "-" + _bundle.suffix + ".json");
+  _bundle.outputMapPath = path.join(_bundle.outputDir, outputMapFilename);
 
-var componentMapSubsetOutputFilename = COMPONENT_MAP_FILENAME.replace(".json", "-" + bundleSuffix + ".json");
+  return _bundle;
+};
 
-var brdFilepath = process.argv[5];
 
-var brdFileContent = fs.readFileSync(brdFilepath, 'utf8');
+function bundleBrdFile(bundle, filepath) {
 
-var components = JSON.parse(fs.readFileSync(componentMapFilepath, 'utf8'));
+  var _board = parseBrdFile(fs.readFileSync(filepath, 'utf8'));
 
-var componentsSubset = {};
+  _board.libraries.forEach(function (currentLibrary) {
+    currentLibrary.packages.forEach(function (currentPackage) {
+      var component = null;
 
-var board = parseBrdFile(brdFileContent);
+      if (component = clone(bundle.libraryComponents[currentPackage.name])) {
+	component.filename = component.filename.replace(new RegExp("([^\\" + path.sep + "]*)"), "$&-" + bundle.suffix);
+	bundle.components[currentPackage.name] = component;
+      }
+    });
+  });
+
+};
+
+
+function writeBundle(bundle) {
+
+  // Create bundle-specific component map file.
+  // TODO: Allow existing file to be updated? (But this wouldn't remove outdated entries?)
+  console.log("Writing component map: " + bundle.outputMapPath);
+  fs.writeFileSync(bundle.outputMapPath, stringify(bundle.components, {space: 1}));
+
+  // Copy required component models into bundle.
+  for (var name in bundle.components) {
+    var modelFilename = bundle.components[name].filename;
+    var modelFilepath = path.join(bundle.outputDir, modelFilename);
+
+    // TODO: Also copy file if the two files differ? (Otherwise we won't copy updated models.)
+    if (!fs.existsSync(modelFilepath)) {
+      console.log("Creating: " + modelFilename)
+      var sourceFilepath = path.join(bundle.libraryDir, bundle.libraryComponents[name].filename);
+      fs.copySync(sourceFilepath, modelFilepath, {clobber: false});
+    }
+  };
+
+  // TODO: Delete/list no longer needed model files?
+
+};
+
 
 // TODO: Handle multiple .brd files on the command line.
 
-board.libraries.forEach(function (currentLibrary) {
-  //console.log(currentLibrary.name);
-  currentLibrary.packages.forEach(function (currentPackage) {
-    //console.log("  " + (components[currentPackage.name] ? "*" : " ") + " " + currentPackage.name);
-    var component = null;
+var bundle = initBundle(process.argv[2], process.argv[3], process.argv[4]);
 
-    if (component = clone(components[currentPackage.name])) {
-      component.filename = component.filename.replace(new RegExp("([^\\" + path.sep + "]*)"), "$&-" + bundleSuffix);
-      componentsSubset[currentPackage.name] = component;
-    }
-  });
-});
+bundleBrdFile(bundle, process.argv[5]);
 
-// TODO: Allow existing file to be updated? (But this wouldn't remove outdated entries?)
-
-var outputFilePath = path.join(outputRootDir, componentMapSubsetOutputFilename);
-console.log("Writing component map: " + outputFilePath);
-
-fs.writeFileSync(outputFilePath, stringify(componentsSubset, {space: 1}))
-
-for (componentName in componentsSubset) {
-  var modelRelativeFilePath = componentsSubset[componentName].filename;
-  var modelFilePath = path.join(outputRootDir, modelRelativeFilePath);
-
-  // TODO: Also copy file if the two files differ? (Otherwise we won't copy updated models.)
-  if (!fs.existsSync(modelFilePath)) {
-    var sourceFilePath = path.join(componentLibraryRootDir, components[componentName].filename);
-    console.log("Creating: " + modelRelativeFilePath)
-    fs.copySync(sourceFilePath, modelFilePath, {clobber: false});
-  }
-};
-
-// TODO: Delete/list no longer needed model files?
+writeBundle(bundle);

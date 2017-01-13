@@ -1,6 +1,6 @@
 {
   "name": "bundle-pcb-models",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Bundle files required for PCB component display",
   "main": "bundle-pcb-models.js",
   "scripts": {
