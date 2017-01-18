@@ -357,10 +357,7 @@
    "models/sparkfun/production_parts/opto/LED_0603/LED-0603.stl"
   ], 
   "filename": "models/sparkfun/production_parts/passive/resistors/0603/LED-0603.stl",
-  "note": "The sensibly named duplicate has a missing face.",
-  "rotation": {
-   "z": 90
-  }
+  "note": "The sensibly named duplicate has a missing face. Also the original version of the footprint was rotated 90 degrees from the latest version."
  }, 
  "LED-1206": {
   "filename": "models/sparkfun/production_parts/opto/LED_1206/LED-1206.stl"
