@@ -853,7 +853,10 @@
   "filename": "models/sparkfun/production_parts/switches/switches/STOMP-SWITCH-3PDT/stl/STOMP-SWITCH-3PDT.STL"
  },
  "SWITCH-SPST-SMD-A": {
-  "filename": "models/sparkfun/production_parts/switches/switches/SWITCH-SPST-SMD-A/RIGHT_ANGLE/stl/SWITCH-SPST-SMD-A.STL"
+  "filename": "models/sparkfun/production_parts/switches/switches/SWITCH-SPST-SMD-A/RIGHT_ANGLE/stl/SWITCH-SPST-SMD-A.STL",
+  "rotation": {
+   "z": 180
+  }
  },
  "TACTILE-PTH": {
   "filename": "models/sparkfun/production_parts/switches/tactile/TACTILE-PTH/stl/TACTILE-PTH.STL"
