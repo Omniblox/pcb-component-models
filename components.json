@@ -571,7 +571,8 @@
   "filename": "models/sparkfun/production_parts/semiconductors/IC_SMD/QFN/QFN-20/stl/QFN20_ALT1.stl"
  },
  "QFN24-3X3": {
-  "filename": "models/sparkfun/production_parts/semiconductors/IC_SMD/QFN/QFN-24/stl/QFN24-3X3.stl"
+  "filename": "models/sparkfun/production_parts/semiconductors/IC_SMD/QFN/QFN-24/stl/QFN24-3X3.stl",
+  "note": "This model is currently incorrectly dimensioned. See <https://github.com/sparkfun/3D_Models/issues/235>."
  },
  "QFN24_PAD": {
   "filename": "models/sparkfun/production_parts/semiconductors/IC_SMD/QFN/QFN-24/stl/QFN24_PAD.stl"
