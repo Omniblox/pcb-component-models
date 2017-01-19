@@ -811,7 +811,11 @@
  },
  "TQFP32-08": {
   "filename": "models/sparkfun/production_parts/semiconductors/IC_SMD/TQFP/TQFP32-08/TQFP32-08.stl",
-  "scale": {"x": 0.001, "y": 0.001, "z": 0.001}
+  "scale": {
+   "x": 0.001,
+   "y": 0.001,
+   "z": 0.001
+  }
  },
  "TRIMPOT-3MM": {
   "duplicates": [
