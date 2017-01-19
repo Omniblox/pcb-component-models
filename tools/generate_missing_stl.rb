@@ -111,7 +111,7 @@ Dir.glob(File.join(directory_root, "**/*.skp")) {
   exported_stl_filepath_style_two = File.join(File.dirname(base_directory), "stl", base_name + ".stl") # In sibling directory
 
   next if base_name.start_with? "AutoSave_" # TODO: Log this?
-
+  next if base_name.include? " - Copy"
 
   if [exported_stl_filepath_style_one,
       exported_stl_filepath_style_two].any? {|export_filepath| File.exist? export_filepath }
