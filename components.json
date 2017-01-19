@@ -194,13 +194,13 @@
   "filename": "models/sparkfun/production_parts/connectors/audio/AUDIO-JACK-3.5MM-SMD/stl/AUDIO-JACK.stl"
  },
  "AUDIO-JACK-3.5MM-SMD": {
+  "center": false,
   "duplicates": [
    "models/sparkfun/production_parts/connectors/audio/audio_jack/AUDIO-JACK-3.5MM-SMD/stl/AUDIO-JACK.stl",
    "models/sparkfun/production_parts/connectors/audio/audio_jack/AUDIO-JACK-3.5MM-SMD/stl/AUDIO-JACK-3_5MM-SMD.STL",
    "models/sparkfun/production_parts/connectors/audio/AUDIO-JACK-3.5MM-SMD/stl/AUDIO-JACK-3_5MM-SMD.STL"
   ],
   "filename": "models/sparkfun/production_parts/connectors/audio/AUDIO-JACK-3.5MM-SMD/stl/AUDIO-JACK.stl",
-  "center": false,
   "note": "No matching model file exists for the package name variation containing a '.' rather than '_'. Also, the models with the more specific '-3_5MM-SMD' suffix are incorrectly positioned in relation to the origin of the package footprint."
  },
  "AUDIO-JACK-3_5MM-SMD": {
@@ -417,11 +417,11 @@
   "filename": "models/sparkfun/production_parts/audio/MIC-9_7MM.stl"
  },
  "MICRO-SD-SOCKET-PP": {
+  "center": false,
   "duplicates": [
    "models/sparkfun/production_parts/connectors/JST/JST-2-SMD/MICRO-SD-SOCKET-PP.stl"
   ],
-  "filename": "models/sparkfun/production_parts/connectors/micro_sd/MICRO-SD-SOCKET-PP.stl",
-  "center": false
+  "filename": "models/sparkfun/production_parts/connectors/micro_sd/MICRO-SD-SOCKET-PP.stl"
  },
  "MICROSD_1_1": {
   "duplicates": [
@@ -463,16 +463,16 @@
   "filename": "models/sparkfun/production_parts/connectors/Power_Jack/stl/POWER_JACK_PTH_LOCK.stl"
  },
  "POWER_JACK_SMD": {
-  "filename": "models/sparkfun/production_parts/connectors/Power_Jack/POWER_JACK_SMD.stl",
-  "center": false
+  "center": false,
+  "filename": "models/sparkfun/production_parts/connectors/Power_Jack/POWER_JACK_SMD.stl"
  },
  "POWER_JACK_SMD_OVERPASTE_REDBOARD_0603": {
-  "filename": "models/sparkfun/production_parts/connectors/Power_Jack/POWER_JACK_SMD_OVERPASTE_REDBOARD_0603.stl",
-  "center": false
+  "center": false,
+  "filename": "models/sparkfun/production_parts/connectors/Power_Jack/POWER_JACK_SMD_OVERPASTE_REDBOARD_0603.stl"
  },
  "POWER_JACK_SMD_OVERPASTE_TOE": {
-  "filename": "models/sparkfun/production_parts/connectors/Power_Jack/POWER_JACK_SMD_OVERPASTE_TOE.stl",
-  "center": false
+  "center": false,
+  "filename": "models/sparkfun/production_parts/connectors/Power_Jack/POWER_JACK_SMD_OVERPASTE_TOE.stl"
  },
  "PT17-21C-L41-TR8": {
   "filename": "models/sparkfun/production_parts/opto/PT17-21C-L41-TR8/PT17-21C-L41-TR8.STL"
