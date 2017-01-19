@@ -264,6 +264,9 @@
  "CRYSTAL-SMD-2_0X1_6MM": {
   "filename": "models/sparkfun/production_parts/passive/resonator/CRYSTAL-SMD-2_0X1_6MM/stl/CRYSTAL-SMD-2_0X1_6MM.STL"
  },
+ "CRYSTAL-SMD-3.2X1.5MM": {
+  "filename": "models/sparkfun/production_parts/passive/resonator/CRYSTAL-SMD-3_2X1_5MM/stl/CRYSTAL-SMD-3_2X1_5MM.STL"
+ },
  "CRYSTAL-SMD-3_2X1_5MM": {
   "filename": "models/sparkfun/production_parts/passive/resonator/CRYSTAL-SMD-3_2X1_5MM/stl/CRYSTAL-SMD-3_2X1_5MM.STL"
  },
