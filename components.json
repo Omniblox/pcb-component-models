@@ -17,6 +17,9 @@
  "0603-CAP": {
   "filename": "models/sparkfun/production_parts/passive/ceramic_smd/0603/0603-CAP.stl"
  },
+ "0603-CAP-2": {
+  "filename": "models/sparkfun/production_parts/passive/ceramic_smd/0603/0603-CAP-2.stl"
+ },
  "0603-LED-ALT1": {
   "filename": "models/sparkfun/production_parts/opto/LED_0603/0603-LED-ALT1.stl"
  },
