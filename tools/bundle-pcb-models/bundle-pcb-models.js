@@ -4,14 +4,14 @@
 
    This tool creates a "bundle" that contains just the meta
    information required to display component models on the specified
-   `.brd` file and the associated models. Reduces the quantity
+   `.brd` file(s) and the associated models. Reduces the quantity
    of data and number of files required compared to using the full
    component model library.
 
 
    Usage:
 
-     node bundle-pcb-models.js <component library root directory> "<bundle suffix>" <output directory> <.brd file>
+     node bundle-pcb-models.js <component library root directory> "<bundle suffix>" <output directory> <.brd file> [...]
 
 
    Output:
@@ -21,8 +21,8 @@
     * Copies required model files into `models-<suffix>` directory.
 
    The `components-<suffix>.json` file contains details of only the
-   components used in the `.brd` file. Their associated `filename` is
-   modified to use the copied model files.
+   components used in the `.brd` file(s). Their associated `filename`
+   is modified to use the copied model files.
 
    Any existing `components-<suffix>.json` file will be overwritten.
 
@@ -156,6 +156,7 @@ function bundleBrdFile(bundle, filepath) {
      supplied `.brd` file that also exist in the configured component
      library.
 
+     (Can be called more than once to bundle multiple boards.)
    */
 
   var _board = parseBrdFile(fs.readFileSync(filepath, 'utf8'));
@@ -180,7 +181,7 @@ function writeBundle(bundle) {
      Write the bundle to the configured directory.
 
      A bundle consists of a tailored component map file and the set of
-     model files used by the board.
+     model files used by the board(s).
 
    */
 
@@ -207,10 +208,11 @@ function writeBundle(bundle) {
 };
 
 
-// TODO: Handle multiple .brd files on the command line.
-
 var bundle = initBundle(process.argv[2], process.argv[3], process.argv[4]);
 
-bundleBrdFile(bundle, process.argv[5]);
+process.argv.slice(5).forEach( function(brdFilePath) {
+  console.log("Processing: " + brdFilePath);
+  bundleBrdFile(bundle, brdFilePath);
+});
 
 writeBundle(bundle);
