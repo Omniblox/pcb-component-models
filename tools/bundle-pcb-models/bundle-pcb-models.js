@@ -92,6 +92,18 @@ function parseBrdFile(fileContent) {
   xml2js.parseString(fileContent, {'explicitArray': false, 'mergeAttrs': true},
 		     function (err, brdObject) {
 
+		       // Note: As `explicitArray` is set to be false
+		       //       it's possible that an expected "collection"
+		       //       of elements might only have one entry and
+		       //       thus be a single object rather than an array
+		       //       of one object. We use `concat()` to handle this.
+		       //       This seemed preferable to having to use `[0]`
+		       //       indexes for all non-collections.
+		       //       See these issues for discussion of this aspect
+		       //       of `xml2js`:
+		       //         * <https://github.com/Leonidas-from-XIV/node-xml2js/issues/216>
+		       //         * <https://github.com/Leonidas-from-XIV/node-xml2js/issues/141>
+
 		       _board = {};
 
 		       _board.libraries = [].concat(brdObject.eagle.drawing.board.libraries.library);
