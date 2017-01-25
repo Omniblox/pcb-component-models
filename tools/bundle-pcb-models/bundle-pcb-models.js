@@ -120,6 +120,13 @@ function parseBrdFile(fileContent) {
 
 
 function initBundle(componentLibraryRootDir, bundleSuffix, outputDir) {
+  /*
+
+     Initialise the bundle with supplied meta/configuration data.
+
+     This configuration is used by the actual bundling routines.
+
+   */
 
   const COMPONENT_MAP_FILENAME = "components.json";
 
@@ -143,6 +150,13 @@ function initBundle(componentLibraryRootDir, bundleSuffix, outputDir) {
 
 
 function bundleBrdFile(bundle, filepath) {
+  /*
+
+     Extracts details of all the component packages used in the
+     supplied `.brd` file that also exist in the configured component
+     library.
+
+   */
 
   var _board = parseBrdFile(fs.readFileSync(filepath, 'utf8'));
 
@@ -161,6 +175,14 @@ function bundleBrdFile(bundle, filepath) {
 
 
 function writeBundle(bundle) {
+  /*
+
+     Write the bundle to the configured directory.
+
+     A bundle consists of a tailored component map file and the set of
+     model files used by the board.
+
+   */
 
   // Create bundle-specific component map file.
   // TODO: Allow existing file to be updated? (But this wouldn't remove outdated entries?)
