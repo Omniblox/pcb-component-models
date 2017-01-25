@@ -81,6 +81,14 @@ function parseBrdFile(fileContent) {
 
   var _board = null;
 
+  //
+  // NOTE: We treat the parsing as if it is blocking/synchronous
+  //       although apparently it's sorta not?
+  //
+  //       See the issue entitled "Sync version of parseString (#159)":
+  //
+  //          <https://github.com/Leonidas-from-XIV/node-xml2js/issues/159#issuecomment-248599477>
+  //
   xml2js.parseString(fileContent, {'explicitArray': false, 'mergeAttrs': true},
 		     function (err, brdObject) {
 
