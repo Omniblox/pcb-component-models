@@ -40,8 +40,44 @@ var clone = require('clone');
 
 
 function parseBrdFile(fileContent) {
+  /*
 
-  // TODO: Comment about `xmldom` use.
+     Parse the content of a `.brd` file into a Javascript
+     object intermediate representation of the board file.
+
+   */
+
+  //
+  // The object returned from this function can be considered
+  // the start of work on a class representation of a `.brd` file.
+  //
+  // Ideally, the Eagle-Loader library will eventually use such
+  // a class and create the render from the intermediate
+  // representation rather than the tightly coupled parse/render
+  // approach it currently uses.
+  //
+  // Because this effort has the potential to be useful in future
+  // and in an effort to minimise the number of languages used in
+  // the project this tool was implemented in Javascript rather than
+  // in Python. It is intended to follow this approach going forward
+  // for other related tools.
+  //
+  // For the moment the intention is for "features" to only be added
+  // as they are needed which is why currently we're not actually
+  // implementing this as a class. For the same reason we currently
+  // only support retrieving libraries, packages and elements.
+  //
+  //
+  // Implementation note:
+  // Ideally we would extract the existing Eagle-Loader parsing
+  // logic and use it with a library like `xmldom`[1] to minimise
+  // reinvention of the wheel. However this would have required a
+  // fair bit of work to create a JS object. Instead `xml2js`[2] is
+  // used and we just use the existing parsing logic as a guide.
+  //
+  // [1] <https://www.npmjs.com/package/xmldom>
+  // [2] <https://www.npmjs.com/package/xml2js>
+  //
 
   var _board = null;
 
