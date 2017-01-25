@@ -90,30 +90,30 @@ function parseBrdFile(fileContent) {
   //          <https://github.com/Leonidas-from-XIV/node-xml2js/issues/159#issuecomment-248599477>
   //
   xml2js.parseString(fileContent, {'explicitArray': false, 'mergeAttrs': true},
-		     function (err, brdObject) {
+                     function (err, brdObject) {
 
-		       // Note: As `explicitArray` is set to be false
-		       //       it's possible that an expected "collection"
-		       //       of elements might only have one entry and
-		       //       thus be a single object rather than an array
-		       //       of one object. We use `concat()` to handle this.
-		       //       This seemed preferable to having to use `[0]`
-		       //       indexes for all non-collections.
-		       //       See these issues for discussion of this aspect
-		       //       of `xml2js`:
-		       //         * <https://github.com/Leonidas-from-XIV/node-xml2js/issues/216>
-		       //         * <https://github.com/Leonidas-from-XIV/node-xml2js/issues/141>
+                       // Note: As `explicitArray` is set to be false
+                       //       it's possible that an expected "collection"
+                       //       of elements might only have one entry and
+                       //       thus be a single object rather than an array
+                       //       of one object. We use `concat()` to handle this.
+                       //       This seemed preferable to having to use `[0]`
+                       //       indexes for all non-collections.
+                       //       See these issues for discussion of this aspect
+                       //       of `xml2js`:
+                       //         * <https://github.com/Leonidas-from-XIV/node-xml2js/issues/216>
+                       //         * <https://github.com/Leonidas-from-XIV/node-xml2js/issues/141>
 
-		       _board = {};
+                       _board = {};
 
-		       _board.libraries = [].concat(brdObject.eagle.drawing.board.libraries.library);
+                       _board.libraries = [].concat(brdObject.eagle.drawing.board.libraries.library);
 
-		       _board.libraries.forEach(function (currentLibrary) {
-			 currentLibrary.packages = [].concat(currentLibrary.packages.package);
-		       });
+                       _board.libraries.forEach(function (currentLibrary) {
+                         currentLibrary.packages = [].concat(currentLibrary.packages.package);
+                       });
 
-		       _board.elements = [].concat(brdObject.eagle.drawing.board.elements.element);
-		     });
+                       _board.elements = [].concat(brdObject.eagle.drawing.board.elements.element);
+                     });
 
   return _board;
 };
@@ -166,8 +166,8 @@ function bundleBrdFile(bundle, filepath) {
       var component = null;
 
       if (component = clone(bundle.libraryComponents[currentPackage.name])) {
-	component.filename = component.filename.replace(new RegExp("([^\\" + path.sep + "]*)"), "$&-" + bundle.suffix);
-	bundle.components[currentPackage.name] = component;
+        component.filename = component.filename.replace(new RegExp("([^\\" + path.sep + "]*)"), "$&-" + bundle.suffix);
+        bundle.components[currentPackage.name] = component;
       }
     });
   });
