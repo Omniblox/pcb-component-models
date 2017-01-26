@@ -513,6 +513,13 @@
  "PVQFN-N16": {
   "filename": "models/sparkfun/production_parts/semiconductors/IC_SMD/QFN/QFN-16/stl/PVQFN-N16.stl"
  },
+ "PW_R-PDSO-G20": {
+  "filename": "models/sparkfun/production_parts/semiconductors/IC_SMD/SSOP/TSSOP20.STL",
+  "library": "robertsonics",
+  "rotation": {
+   "x": 90
+  }
+ },
  "Q5-DD_SPX29300": {
   "filename": "models/sparkfun/production_parts/semiconductors/IC_SMD/TO263/Q5-DD_SPX29300/stl/Q5-DD_SPX29300.STL"
  },
@@ -621,6 +628,11 @@
  },
  "RN41": {
   "filename": "models/sparkfun/production_parts/modules/wireless/bluetooth/rn41/stl/RN41.STL"
+ },
+ "S-PDSO-G08": {
+  "filename": "models/sparkfun/production_parts/semiconductors/IC_SMD/MSOP8/stl/MSOP8.STL",
+  "library": "robertsonics",
+  "note": "This model does not have the pad in the middle of the base of the IC."
  },
  "S2B-PH": {
   "filename": "models/sparkfun/production_parts/connectors/JST/JST_2/JST-2-SMD/stl/S2B-PH.stl"
@@ -903,6 +915,12 @@
    "x": 0.001,
    "y": 0.001,
    "z": 0.001
+  }
+ },
+ "TQFP64": {
+  "filename": "models/sparkfun/production_parts/semiconductors/IC_SMD/TQFP/TQFP-64/stl/PIC24FXXX_TQFP64.STL",
+  "rotation": {
+   "z": 90
   }
  },
  "TRIMPOT-3MM": {
